@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+
+</head>
+<body style="background-color: rgb(74, 15, 15) ; color: aliceblue;" >
+    <h2>Amezing image</h2>
+    <ul  id="images">
+        <li><img width="200px" id="photoshop" src="a.png" alt="photoshop" ></1i>
+        <li><img width="200px" id="japan" src="a.png" alt="" ></1i>
+        <li><img width="200px" id="owl" src="a.png" alt=""  ></1i>
+        <li><a style="color: aliceblue;" href="https://google.com"
+        id="google">Google</a></li>
+           
+    </ul>
+</body>
+<script>
+    //old version
+    // document.getElementById('owl').onclick = function (){
+    //     alert('owl clicked')
+    // }
+
+    // latest version
+    // document.getElementById("owl").addEventListener("click", function(){
+    //     alert('owl clicked')
+    // })
+
+    //to study
+    //type ,defaultPrevented ,srcElement ,currentTarget,
+    // target, eoElement
+
+
+
+    // document.getElementById("images").addEventListener("click", function(e){
+    // console.log('clicked inside the ul')
+    // },false)
+
+    // document.getElementById("owl").addEventListener("click", function(e){
+    // console.log('owl clicked') 
+    // e.stopPropagation()
+    // },false)
+
+
+    // tap google but stop going the site on
+    document.getElementById('google').addEventListener('click', function(e){
+        console.log("LI")
+        e.preventDefault()
+        e.stopPropagation()
+
+    },false)
+  
+    document.querySelector('#images').addEventListener('click', function(e){
+    console.log(e.target.tagName);
+    if(e.target.tagName === 'IMG'){
+    console.log(e.target.id)
+       let removeIt = e.target.parentNode
+       removeIt.remove()
+    }
+    // removeIt.parentNode.removeChild(removeIt)
+
+    })
+
+</script>
+</html>

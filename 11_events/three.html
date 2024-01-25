@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="background-color: red; text-align: center; line-height: 80px; color: blue; padding: 40px;">chai with JavaScript</h1>
+    <div style="background-color: blue; padding: 0px 50px; text-align: center;">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+    <script>
+      let set;
+      let i = 0;
+      document.getElementById("start").addEventListener("click", function () {
+        console.log("now print has started");
+        set = setInterval(sayDate, 1000, "HI");
+      });
+
+      const sayDate = function (str) {
+        console.log(i);
+        document.querySelector("h1").innerText = i;
+        console.log(str, "abhiiiiii", Date.now());
+
+        i++;
+        if (i >= 60) {
+          clearInterval(set);
+        }
+      };
+
+      document.querySelector("#stop").addEventListener("click", function () {
+        console.log("now print has stopped");
+        clearInterval(set);
+      });
+    </script>
+  </body>
+</html>

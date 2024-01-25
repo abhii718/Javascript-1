@@ -32,7 +32,7 @@
     //type ,defaultPrevented ,srcElement ,currentTarget,
     // target, eoElement, 
     //cllientx, clientY, clientZ
-    
+
 
 
 
@@ -48,12 +48,16 @@
 
     // tap google but stop going the site on
     document.getElementById('google').addEventListener('click', function(e){
+    console.log(e.target.tagName);
+
         console.log("LI")
         e.preventDefault()
         e.stopPropagation()
-
+    
     },false)
-  
+    
+ 
+
     document.querySelector('#images').addEventListener('click', function(e){
     // console.log(e.target.tagName);
     if(e.target.tagName === 'IMG'){
@@ -64,6 +68,8 @@
     // removeIt.parentNode.removeChild(removeIt)
 
     })
+
+    // document.querySelector('#japan').addEventListener('click', function())
 
 </script>
 </html>

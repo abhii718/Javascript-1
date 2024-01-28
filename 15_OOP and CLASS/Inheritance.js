@@ -18,3 +18,9 @@ class Teacher extends User {
 }
 const chai = new Teacher("chai", "chai@teacher.com");
 chai.addCourse();
+const masalaChai = new User("Masalachai");
+masalaChai.logMe();
+
+console.log(chai === Teacher);
+console.log(chai instanceof User);
+console.log(chai instanceof Teacher);

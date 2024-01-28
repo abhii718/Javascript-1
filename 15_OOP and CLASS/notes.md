@@ -52,13 +52,14 @@ Object literal
 ```
 
 -Instances (new, this)
+
 ```Instances are individual objects created from a constructor or class.
 The new keyword is used to create instances.
 The this keyword refers to the current instance of the object.
 ```
 
-
 ## Four Pillars of OOP:
+
 Abstraction:
 
 ```Abstraction involves simplifying complex systems by modeling classes based on the essential properties and behaviors.
@@ -74,3 +75,4 @@ Polymorphism:
 
 Polymorphism allows objects of different types to be treated as objects of a common type.
 It enables the same method name to be used for different types of objects, and the appropriate method is called based on the object's type.
+```

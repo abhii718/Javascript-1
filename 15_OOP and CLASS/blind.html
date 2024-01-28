@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+  </head>
+  <body>
+    <button>Button Clicked</button>
+    <script>
+      class ReactComponent {
+        constructor() {
+          this.library = "React";
+          this.server = "https://localhost:300";
+
+          // Bind the handleClick function to the current instance of the class
+          this.handleClick = this.handleClick.bind(this);
+
+          // Add event listener to the button
+          document
+            .querySelector("button")
+            .addEventListener("click", this.handleClick);
+        }
+
+        handleClick() {
+          console.log("Button clicked");
+          console.log(this.server);
+          //   document.querySelector('button').addEventListener("click", () => this.handleClick());// second way to do that
+        }
+      }
+
+      // Create an instance of the ReactComponent class
+      const reactInstance = new ReactComponent();
+    </script>
+  </body>
+</html>

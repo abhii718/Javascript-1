@@ -34,20 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
       default:
         // Check if the last character is not an operator or a dot
         if (
-          (currentInput !== "" || /\d/.test(buttonValue)) &&
-          (buttonValue !== "%" || /\d/.test(currentInput.slice(-1))) &&
-          (buttonValue !== "+" || /\d/.test(currentInput.slice(-1))) &&
-          (buttonValue !== "*" || /\d/.test(currentInput.slice(-1))) &&
-          (buttonValue !== "/" || /\d/.test(currentInput.slice(-1))) &&
-          (buttonValue !== "-" || /\d/.test(currentInput.slice(-1))) &&
-          buttonValue !== "."
+          (currentInput === "" && buttonValue === "-") || // Allow "-" at the beginning
+          ((currentInput !== "" || /\d/.test(buttonValue)) &&
+            (buttonValue !== "%" || /\d/.test(currentInput.slice(-1))) &&
+            (buttonValue !== "+" || /\d/.test(currentInput.slice(-1))) &&
+            (buttonValue !== "*" || /\d/.test(currentInput.slice(-1))) &&
+            (buttonValue !== "/" || /\d/.test(currentInput.slice(-1))) &&
+            (buttonValue !== "-" || /\d/.test(currentInput.slice(-1))) &&
+            buttonValue !== ".")
         ) {
           inputBox.value += buttonValue;
         }
+
         break;
     }
   }
-
   function isOperator(value) {
     return operators.includes(value);
   }

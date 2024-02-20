@@ -1,22 +1,23 @@
 * {
     margin: 0;
     padding: 0;
-    /* filter: blur(2px);  */
-
 }
 
-body {
+.background {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('image.png');
+    background-image: url('photo.jpg');
     background-size: cover;
+    height: 100vh;
+    position: relative;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
     background-position: center;
-    min-height: 100vh;
-    filter: none;
-    /* filter: blur(1px);  */
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 
 .container {
@@ -27,7 +28,13 @@ body {
     width: 40vh;
     background-color: rgba(0, 0, 0, 0.564);
     color: white;
-    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 form {
@@ -74,7 +81,6 @@ form input {
     align-items: center;
     border-radius: 0.5rem;
     border-color: 1px solid lightgray;
-    /* background-color: red; */
 }
 
 .select-container select {
@@ -93,15 +99,18 @@ form button {
     font-size: 1.1rem;
     cursor: pointer;
 }
-h2{
-    user-select: none; /* Standard syntax */
-}
-p{
-    margin-left: ;
-    user-select: none; 
+
+h2 {
+    user-select: none;
+    /* Standard syntax */
 }
 
-.amount p{
+p {
+    margin-left: 1 px;
+    user-select: none;
+}
+
+.amount p {
     margin-left: 7px;
     margin-bottom: 3px;
 }
